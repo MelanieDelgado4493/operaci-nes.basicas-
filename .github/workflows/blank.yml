@@ -19,7 +19,7 @@ public  static  void  main ( String [] args ) lanza  NumberFormatException , IOE
     BufferedReader  lectura = new  BufferedReader ( new  InputStreamReader ( System . in ));
      
         sistema _ fuera _ println ( "Eliga una opcion" );
-     	sistema _ fuera _ println ( "1.Suma" );
+        sistema_fuera_println( "1.suma");
         sistema _ fuera _ println ( "2. Resta" );
         sistema _ fuera _ println ( "3.Multiplicacion" );
         sistema _ fuera _ println ( "4.División" );
