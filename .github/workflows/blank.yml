@@ -1,36 +1,158 @@
-# This is a basic workflow to help you get started with Actions
+examen del paquete . bimestral ;
 
-name: CI
+importar  Java . io .*;
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+importar  Java . útil _ escáner ;
+/**
+*
+* @autor Danilo
+*/
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+ clase  pública ejercicio1 {
+     
+    
+    
+public  static  void  main ( String [] args ) lanza  NumberFormatException , IOException {
+  
+    BufferedReader  lectura = new  BufferedReader ( new  InputStreamReader ( System . in ));
+     
+        sistema _ fuera _ println ( "Eliga una opcion" );
+     	sistema _ fuera _ println ( "1.Suma" );
+        sistema _ fuera _ println ( "2. Resta" );
+        sistema _ fuera _ println ( "3.Multiplicacion" );
+        sistema _ fuera _ println ( "4.División" );
+        
+        
+        int  serie = Entero . parseInt ( lectura . readLine ());
+        cambiar ( serie ){
+        caso  1 :
+        suma ();
+        romper ;
+        caso  2 :
+        resto ();
+        romper ;
+        caso  3 :
+        Multiplicación ();
+        romper ;
+       caso  4 :
+       División ();
+       romper ;
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+        predeterminado :
+        sistema _ fuera _ println ( "Eleccion Incorrecta" );
+}
+}
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+       public  static  void  Suma () lanza  NumberFormatException , IOException {
+        Lector de escáner = nuevo  escáner ( System . in );
+    
+       
+       int  numero1 ;
+       int  num2 ;
+       int  suma ;
+        resultado int ;
+       sistema _ fuera _ println ( "Introduce el primer numero:" );
+        num1 = lector . siguienteInt ();
+ 
+        sistema _ fuera _ println ( "Introduce el segundo número:" );
+        num2 = lector . siguienteInt ();
+        
+        sistema _ fuera _ println ( "Introduce el resultado de la suma:" );
+        resultado = lector . siguienteInt ();
+        
+        suma = num1 + num2 ;
+        sistema _ fuera _ println ( "La suma es " + num1 + " + " + num2 + " = " + suma );
+        
+        si ( resultado == suma ){
+            sistema _ fuera _ println ( "Realizaste bien la suma!" );        
+        }
+        demás 
+             sistema _ fuera _ println ( "Intento de nuevo :(" );    
+       
+       }
+
+       public  static  void  Resta () lanza  NumberFormatException , IOException {
+        Lector de escáner = nuevo  escáner ( System . in );
+    
+       
+       int  numero1 ;
+       int  num2 ;
+        resta int ;
+        resultado int ;
+       sistema _ fuera _ println ( "Introduce el primer numero:" );
+        num1 = lector . siguienteInt ();
+ 
+        sistema _ fuera _ println ( "Introduce el segundo número:" );
+        num2 = lector . siguienteInt ();
+        
+        sistema _ fuera _ println ( "Introduce el resultado de la resta:" );
+        resultado = lector . siguienteInt ();
+        
+        resta = num1 - num2 ;
+        sistema _ fuera _ println ( "La resta es " + num1 + " - " + num2 + " = " + resta );
+        
+        si ( resultado == resta ){
+            sistema _ fuera _ println ( "Realizaste bien la resta!" );        
+        }
+        demás 
+             sistema _ fuera _ println ( "Intento de nuevo :(" );    
+       
+       }
+
+       public  static  void  Multiplicacion () lanza  NumberFormatException , IOException {
+        Lector de escáner = nuevo  escáner ( System . in );
+   
+       int  numero1 ;
+       int  num2 ;
+    
+       int  multip ;
+        resultado int ;
+       sistema _ fuera _ println ( "Introduce el primer numero:" );
+        num1 = lector . siguienteInt ();
+ 
+        sistema _ fuera _ println ( "Introduce el segundo número:" );
+        num2 = lector . siguienteInt ();
+        
+        sistema _ fuera _ println ( "Introduce el resultado de la multiplicacion:" );
+        resultado = lector . siguienteInt ();
+        
+        multip = num1 * num2 ;
+        sistema _ fuera _ println ( "La multiplicacion es " + num1 + " * " + num2 + " = " + multp );
+        
+        si ( resultado == multip ){
+            sistema _ fuera _ println ( "Realizaste bien la multiplicacion!" );        
+        }
+        demás 
+             sistema _ fuera _ println ( "Intento de nuevo :(" );    
+       
+       }
+       
+       public  static  void  Division () lanza  NumberFormatException , IOException {
+        Lector de escáner = nuevo  escáner ( System . in );
+       int  numero1 ;
+       int  num2 ;
+        div int ;
+        resultado int ;
+       
+       sistema _ fuera _ println ( "Introduce el primer numero:" );
+        num1 = lector . siguienteInt ();
+ 
+        sistema _ fuera _ println ( "Introduce el segundo número:" );
+        num2 = lector . siguienteInt ();
+        
+        sistema _ fuera _ println ( "Introduce el resultado de la división:" );
+        resultado = lector . siguienteInt ();
+        
+        div = num1 / num2 ;
+        sistema _ fuera _ println ( "La división es" + num1 + "/" + num2 + "=" + div );
+        
+        si ( resultado == div ){
+            sistema _ fuera _ println ( "¡Realizaste bien la división!" );        
+        }
+        demás 
+             sistema _ fuera _ println ( "Intento de nuevo :(" );    
+       
+       }
+}
