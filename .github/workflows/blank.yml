@@ -1,158 +1,77 @@
-instrucción asistida por computadora .operaciones básicas 
+java
+import java.util.Random;
+import java.util.Scanner;
 
-importar  Java . io .*;
+public class MathQuiz {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        int num1, num2, operator, correctAnswer, userAnswer;
+        String[] operators = {"+", "-", "*", "/"};
+        String response;
 
+        do {
+            operator = random.nextInt(4);
+            num1 = random.nextInt(10) + 1;
+            num2 = random.nextInt(10) + 1;
 
-importar  Java . útil _ escáner ;
-/**
-*
-* @autor Melanie.Delgado
-*/
+            switch (operators[operator]) {
+                case "+":
+                    correctAnswer = num1 + num2;
+                    System.out.printf("What is %d + %d? ", num1, num2);
+                    break;
+                case "-":
+                    correctAnswer = num1 - num2;
+                    System.out.printf("What is %d - %d? ", num1, num2);
+                    break;
+                case "*":
+                    correctAnswer = num1 * num2;
+                    System.out.printf("What is %d * %d? ", num1, num2);
+                    break;
+                default:
+                    correctAnswer = num1 / num2;
+                    System.out.printf("What is %d / %d? ", num1, num2);
+                    break;
+            }
 
+            userAnswer = scanner.nextInt();
 
- clase  pública ejercicio1 {
-     
-    
-    
-public  static  void  main ( String [] args ) lanza  NumberFormatException , IOException {
-  
-    BufferedReader  lectura = new  BufferedReader ( new  InputStreamReader ( System . in ));
-     
-        sistema _ fuera _ println ( "Eliga una opcion" );
-        sistema_fuera_println( "1.suma");
-        sistema _ fuera _ println ( "2. Resta" );
-        sistema _ fuera _ println ( "3.Multiplicacion" );
-        sistema _ fuera _ println ( "4.División" );
-        
-        
-        int  serie = Entero . parseInt ( lectura . readLine ());
-        cambiar ( serie ){
-        caso  1 :
-        suma ();
-        romper ;
-        caso  2 :
-        resto ();
-        romper ;
-        caso  3 :
-        Multiplicación ();
-        romper ;
-       caso  4 :
-       División ();
-       romper ;
+            if (userAnswer == correctAnswer) {
+                int responseIndex = random.nextInt(4);
+                switch (responseIndex) {
+                    case 0:
+                        response = "¡Muy bien!";
+                        break;
+                    case 1:
+                        response = "¡Excelente!";
+                        break;
+                    case 2:
+                        response = "¡Buen trabajo!";
+                        break;
+                    default:
+                        response = "¡Sigue así!";
+                        break;
+                }
+            } else {
+                int responseIndex = random.nextInt(4);
+                switch (responseIndex) {
+                    case 0:
+                        response = "No. Por favor intenta de nuevo.";
+                        break;
+                    case 1:
+                        response = "Incorrecto. Intenta una vez más.";
+                        break;
+                    case 2:
+                        response = "¡No te rindas!";
+                        break;
+                    default:
+                        response = "Sigue intentando.";
+                        break;
+                }
+            }
 
-        predeterminado :
-        sistema _ fuera _ println ( "Eleccion Incorrecta" );
-}
-}
-
-       public  static  void  Suma () lanza  NumberFormatException , IOException {
-        Lector de escáner = nuevo  escáner ( System . in );
-    
-       
-       int  numero1 ;
-       int  num2 ;
-       int  suma ;
-        resultado int ;
-       sistema _ fuera _ println ( "Introduce el primer numero:" );
-        num1 = lector . siguienteInt ();
- 
-        sistema _ fuera _ println ( "Introduce el segundo número:" );
-        num2 = lector . siguienteInt ();
-        
-        sistema _ fuera _ println ( "Introduce el resultado de la suma:" );
-        resultado = lector . siguienteInt ();
-        
-        suma = num1 + num2 ;
-        sistema _ fuera _ println ( "La suma es " + num1 + " + " + num2 + " = " + suma );
-        
-        si ( resultado == suma ){
-            sistema _ fuera _ println ( "Realizaste bien la suma!" );        
-        }
-        demás 
-             sistema _ fuera _ println ( "Intento de nuevo :(" );    
-       
-       }
-
-       public  static  void  Resta () lanza  NumberFormatException , IOException {
-        Lector de escáner = nuevo  escáner ( System . in );
-    
-       
-       int  numero1 ;
-       int  num2 ;
-        resta int ;
-        resultado int ;
-       sistema _ fuera _ println ( "Introduce el primer numero:" );
-        num1 = lector . siguienteInt ();
- 
-        sistema _ fuera _ println ( "Introduce el segundo número:" );
-        num2 = lector . siguienteInt ();
-        
-        sistema _ fuera _ println ( "Introduce el resultado de la resta:" );
-        resultado = lector . siguienteInt ();
-        
-        resta = num1 - num2 ;
-        sistema _ fuera _ println ( "La resta es " + num1 + " - " + num2 + " = " + resta );
-        
-        si ( resultado == resta ){
-            sistema _ fuera _ println ( "Realizaste bien la resta!" );        
-        }
-        demás 
-             sistema _ fuera _ println ( "Intento de nuevo :(" );    
-       
-       }
-
-       public  static  void  Multiplicacion () lanza  NumberFormatException , IOException {
-        Lector de escáner = nuevo  escáner ( System . in );
-   
-       int  numero1 ;
-       int  num2 ;
-    
-       int  multip ;
-        resultado int ;
-       sistema _ fuera _ println ( "Introduce el primer numero:" );
-        num1 = lector . siguienteInt ();
- 
-        sistema _ fuera _ println ( "Introduce el segundo número:" );
-        num2 = lector . siguienteInt ();
-        
-        sistema _ fuera _ println ( "Introduce el resultado de la multiplicacion:" );
-        resultado = lector . siguienteInt ();
-        
-        multip = num1 * num2 ;
-        sistema _ fuera _ println ( "La multiplicacion es " + num1 + " * " + num2 + " = " + multp );
-        
-        si ( resultado == multip ){
-            sistema _ fuera _ println ( "Realizaste bien la multiplicacion!" );        
-        }
-        demás 
-             sistema _ fuera _ println ( "Intento de nuevo :(" );    
-       
-       }
-       
-       public  static  void  Division () lanza  NumberFormatException , IOException {
-        Lector de escáner = nuevo  escáner ( System . in );
-       int  numero1 ;
-       int  num2 ;
-        div int ;
-        resultado int ;
-       
-       sistema _ fuera _ println ( "Introduce el primer numero:" );
-        num1 = lector . siguienteInt ();
- 
-        sistema _ fuera _ println ( "Introduce el segundo número:" );
-        num2 = lector . siguienteInt ();
-        
-        sistema _ fuera _ println ( "Introduce el resultado de la división:" );
-        resultado = lector . siguienteInt ();
-        
-        div = num1 / num2 ;
-        sistema _ fuera _ println ( "La división es" + num1 + "/" + num2 + "=" + div );
-        
-        si ( resultado == div ){
-            sistema _ fuera _ println ( "¡Realizaste bien la división!" );        
-        }
-        demás 
-             sistema _ fuera _ println ( "Intento de nuevo :(" );    
-       
-       }
+            System.out.println(response);
+            System.out.println("Presiona 1 para continuar o cualquier otro número para salir.");
+        } while (scanner.nextInt() == 1);
+    }
 }
